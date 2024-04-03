@@ -28,8 +28,8 @@ int	fill_stack(t_list **current, int argc, char **argv)
 	*current = first;
 	return (1);
 }
-
-/*//esta funcion solo es para debugear y chekear, luego se borra
+/*
+//esta funcion solo es para debugear y chekear, luego se borra
 void	print_stack(t_list *stack)
 {
 	while(stack != NULL)
@@ -39,7 +39,6 @@ void	print_stack(t_list *stack)
 	}
 	printf("\n-----------\n");
 }*/
-
 
 //escribir una funcion de comprobacion para acabar el juego
 
@@ -110,9 +109,9 @@ int	main(int argc, char *argv[])
 	ft_sort(&stack_a, &stack_b, argc - 1);
 	//print_stack(stack_a);
 	//print_stack(stack_b);
-	if (!is_sorted(stack_a))
+	//if (!is_sorted(stack_a))
 		//printf("Not sorted, loser\n"); //para borrar
-		return (ft_error());
+		//return (ft_error());
 	ft_free(&stack_a);
 	ft_free(&stack_b);
 	return (1);

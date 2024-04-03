@@ -23,6 +23,7 @@ void    add_stack(t_list *stack, int n);
 int 	get_min_ind(t_list *stack);
 int 	get_max_ind(t_list *stack);
 int		ft_sort_three(t_list **stack_a);
+int		ft_sort_four(t_list **stack_a, t_list **stack_b);
 int		ft_sort_five(t_list **stack_a, t_list **stack_b);
 
 
@@ -64,6 +65,8 @@ int			ft_stack_len(t_list *stack);
 int			ft_div(int num, int div);
 int			ft_error_free(t_list **stack_a, t_list **stack_b);
 void		ft_free(t_list **stack);
+int			ft_free_int(int *ptr, int flag);
+int			ft_strlen(char *str);
 
 
 

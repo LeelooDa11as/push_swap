@@ -26,6 +26,12 @@ int	ft_error_free(t_list **stack_a, t_list **stack_b)
 	return (1);
 }
 
+int ft_free_int(int *ptr, int flag)
+{
+    free(ptr);
+    return (flag);
+}
+
 int ft_div(int num, int div)
 {
     return(num/div%2);
@@ -42,4 +48,15 @@ int ft_stack_len(t_list *stack)
         len++;
     }
     return (len);
+}
+
+int ft_strlen(char *str)
+{
+    int len;
+
+    len = 0;
+    while (str[len] != '\0')
+        len++;
+    return (len);
+
 }

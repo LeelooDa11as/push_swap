@@ -68,11 +68,12 @@ int get_min_ind(t_list *stack)
     int min_i;
     int min;
 
-    i = 0;
+    i = 1;
+    min_i = 1;
     min = stack->num;
     while (stack != NULL)
     {
-        if (stack->num < min)
+        if (min < stack->num)
         {
             min = stack->num;
             min_i = i;
@@ -82,6 +83,50 @@ int get_min_ind(t_list *stack)
     }
     return (min_i);
 }
+
+int ft_sort_four(t_list **stack_a, t_list **stack_b)
+{
+
+    int min;
+    
+    min = get_min_ind(*stack_a);
+    if (min == 4)
+        ft_do_rev_rotate(stack_a, 'a');
+    else if (min >= 1 && min <= 3)
+    {
+        while((*stack_a)->num != min)
+            ft_do_rotate(stack_a, 'a');
+    }
+    else
+        printf("min index no ha funcionado en four\n");
+    ft_do_push(stack_a, stack_b, 'b');
+    ft_sort_three(stack_a);
+    ft_do_push(stack_b, stack_a, 'a');
+    return (1);
+}
+/*
+int ft_sort_five(t_list **stack_a, t_list **stack_b)
+{
+    int min;
+
+    min = get_min_ind(*stack_a);
+    if (min == 4 || min == 5)
+    {
+        while ((*stack_a)->num != min)
+            ft_do_rev_rotate(stack_a, 'a');
+    }
+    else if (min == 1 || min == 2 | min == 3)
+    {
+        while ((*stack_a)->num != min)
+            ft_do_rotate(stack_a, 'a');
+    }
+    else 
+        printf("No funciona el min_index\n");
+    ft_do_push(stack_a, stack_b, 'b');
+    ft_sort_four(stack_a, stack_b);
+    ft_do_push(stack_b, stack_a, 'a');
+    return (1);
+}*/
 
 int ft_sort_five(t_list **stack_a, t_list **stack_b)
 {
@@ -98,15 +143,20 @@ int ft_sort_five(t_list **stack_a, t_list **stack_b)
             ft_do_rev_rotate(stack_a, 'a');
     ft_do_push(stack_a, stack_b, 'b');
     min = get_min_ind(*stack_a);
+    len = ft_stack_len(*stack_a);
+    //printf("len: %d\n", len);
+    //printf("min: %d\n", min);
+    if (len == 3 && min == 1)
+        ft_do_push(stack_a, stack_b, 'b');
     if (min < 2)
         ft_do_rotate(stack_a, 'a');
     else
         while (min++ < len - 1)
             ft_do_rev_rotate(stack_a, 'a');
-    ft_do_push(stack_a, stack_b, 'b');
+    // ft_do_push(stack_a, stack_b, 'b');
 
     ft_sort_three(stack_a);
     ft_do_push(stack_b, stack_a, 'a');
     ft_do_push(stack_b, stack_a, 'a');
     return (1);
-}
+} 
