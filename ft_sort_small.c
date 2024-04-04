@@ -4,6 +4,8 @@ int ft_sort_three(t_list **stack_a)
 {
     int     max_i;
 
+    if (is_sorted(*stack_a))
+        return (1);
     max_i = get_max_ind(*stack_a);
     if (max_i == 0)
         ft_do_rotate(stack_a, 'a');
@@ -73,7 +75,7 @@ int get_min_ind(t_list *stack)
     min = stack->num;
     while (stack != NULL)
     {
-        if (min < stack->num)
+        if (min > stack->num)
         {
             min = stack->num;
             min_i = i;
@@ -84,7 +86,7 @@ int get_min_ind(t_list *stack)
     return (min_i);
 }
 
-int ft_sort_four(t_list **stack_a, t_list **stack_b)
+/*int ft_sort_four(t_list **stack_a, t_list **stack_b)
 {
 
     int min;
@@ -103,9 +105,9 @@ int ft_sort_four(t_list **stack_a, t_list **stack_b)
     ft_sort_three(stack_a);
     ft_do_push(stack_b, stack_a, 'a');
     return (1);
-}
-/*
-int ft_sort_five(t_list **stack_a, t_list **stack_b)
+}*/
+
+/*int ft_sort_five(t_list **stack_a, t_list **stack_b)
 {
     int min;
 
@@ -135,25 +137,25 @@ int ft_sort_five(t_list **stack_a, t_list **stack_b)
 
     len = ft_stack_len(*stack_a);
     min = get_min_ind(*stack_a);
-    if (min <= len/2)
-        while (min-- > 0)
+    if (min == 1 || min == 2 || min == 3)
+        while (min-- != 1)
             ft_do_rotate(stack_a, 'a');
     else
-        while (min++ < len)
+        while (min++ <= len)
             ft_do_rev_rotate(stack_a, 'a');
     ft_do_push(stack_a, stack_b, 'b');
     min = get_min_ind(*stack_a);
     len = ft_stack_len(*stack_a);
     //printf("len: %d\n", len);
     //printf("min: %d\n", min);
-    if (len == 3 && min == 1)
-        ft_do_push(stack_a, stack_b, 'b');
-    if (min < 2)
+    //if (len == 3 && min == 1)
+    //    ft_do_push(stack_a, stack_b, 'b');
+    if (min == 2)
         ft_do_rotate(stack_a, 'a');
     else
-        while (min++ < len - 1)
+        while (min++ <= len )
             ft_do_rev_rotate(stack_a, 'a');
-    // ft_do_push(stack_a, stack_b, 'b');
+    ft_do_push(stack_a, stack_b, 'b');
 
     ft_sort_three(stack_a);
     ft_do_push(stack_b, stack_a, 'a');

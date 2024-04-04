@@ -73,11 +73,19 @@ int ft_sort(t_list **stack_a, t_list **stack_b, int len)
 int ft_radix(t_list **stack_a, t_list **stack_b)
 {
 	int		div;
-	//t_list	*first;
+	int 	len;
+	int 	iters;
 	
 	div = 1;
+	iters = 0;
+	len = ft_stack_len(*stack_a);
+	while (len > 0)
+	{
+		++iters;
+		len /= 2;	
+	}
 	//first = *stack_a;
-	while(!is_sorted(*stack_a))
+	while(iters-- > 0)
 	{
 		ft_send_digb(stack_a, stack_b, div);
 		//ft_send_diga(stack_a, stack_b, div*2);
@@ -88,6 +96,8 @@ int ft_radix(t_list **stack_a, t_list **stack_b)
 	}
 	while (*stack_b)
         ft_do_push(stack_b, stack_a, 'a');
+	//if (!is_sorted(*stack_a))
+	//	printf("Not Sorted, loser\n"); //para borrar
 	return (1);
 }
 
@@ -109,8 +119,8 @@ int	main(int argc, char *argv[])
 	ft_sort(&stack_a, &stack_b, argc - 1);
 	//print_stack(stack_a);
 	//print_stack(stack_b);
-	//if (!is_sorted(stack_a))
-		//printf("Not sorted, loser\n"); //para borrar
+	//if (is_sorted(stack_a))
+	//	printf("Sorted, winner\n"); //para borrar
 		//return (ft_error());
 	ft_free(&stack_a);
 	ft_free(&stack_b);
