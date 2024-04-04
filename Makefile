@@ -1,4 +1,4 @@
-SRCS = ft_push_swap.c ft_check_input.c ft_do_moves.c ft_double_moves.c\
+SRCS = ft_push_swap.c ft_check_input.c ft_do_moves.c \
 		ft_moves.c ft_utils.c ft_sort.c ft_sort_small.c
 
 OBJS = ${SRCS:.c=.o}
