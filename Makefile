@@ -1,5 +1,17 @@
-SRCS = ft_push_swap.c ft_check_input.c ft_do_moves.c \
-		ft_moves.c ft_utils.c ft_sort.c ft_sort_small.c
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: kkoval <kkoval@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/04/05 13:26:50 by kkoval            #+#    #+#              #
+#    Updated: 2024/04/05 13:42:19 by kkoval           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+SRCS = ft_push_swap.c ft_check_input.c ft_do_moves.c ft_moves.c ft_utils.c  \
+		ft_sort.c ft_sort_small.c
 
 OBJS = ${SRCS:.c=.o}
 

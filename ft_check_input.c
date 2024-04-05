@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_input.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkoval <kkoval@student.42barcelon>         +#+  +:+       +#+        */
+/*   By: kkoval <kkoval@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 16:05:44 by kkoval            #+#    #+#             */
-/*   Updated: 2024/04/04 16:12:01 by kkoval           ###   ########.fr       */
+/*   Updated: 2024/04/05 13:37:52 by kkoval           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 long long int	ft_atoi(char *str)
 {
-	long long	int	res;
+	long long int	res;
 	int				sig;
 	int				i;
 
