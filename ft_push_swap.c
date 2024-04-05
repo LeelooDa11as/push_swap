@@ -22,7 +22,7 @@ int	fill_stack(t_list **current, int argc, char **argv)
 	*current = malloc(sizeof(t_list));
 	if (!current)
 		return (0);
-	(*current)->num = (int)ft_atoi(argv[1]);
+	(*current)->num = (long long int)ft_atoi(argv[1]);
 	(*current)->next = NULL;
 	first = *current;
 	while (i < argc)
@@ -71,18 +71,9 @@ int	ft_sort(t_list **stack_a, t_list **stack_b, int len)
 int	ft_radix(t_list **stack_a, t_list **stack_b)
 {
 	int	div;
-	int	len;
-	int	iters;
 
 	div = 1;
-	iters = 0;
-	len = ft_stack_len(*stack_a);
-	while (len > 0)
-	{
-		iters++;
-		len /= 2;
-	}
-	while (iters-- > 0)
+	while (!is_sorted(*stack_a))
 	{
 		ft_send_digb(stack_a, stack_b, div);
 		while (*stack_b)
@@ -92,6 +83,16 @@ int	ft_radix(t_list **stack_a, t_list **stack_b)
 	while (*stack_b)
 		ft_do_push(stack_b, stack_a, 'a');
 	return (1);
+}
+
+void	print_stack(t_list *stack)
+{
+	while(stack != NULL)
+	{
+		printf("\n     %lld\n     |", stack->num);
+		stack = stack->next;
+	}
+	printf("\n-----------\n");
 }
 
 int	main(int argc, char *argv[])
@@ -106,12 +107,10 @@ int	main(int argc, char *argv[])
 	if (!ft_check_input(argc, argv))
 		return (ft_error());
 	if (!fill_stack(&stack_a, argc, argv))
-	{
 		ft_error_free(&stack_a, &stack_b);
-	}
 	pos_stack(stack_a);
+
 	ft_sort(&stack_a, &stack_b, argc - 1);
-	//print_stack(stack_a);
 	//if (is_sorted(stack_a))
 		//printf("Sorted, winner\n"); //para borrar
 		//return (ft_error());

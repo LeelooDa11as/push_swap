@@ -12,11 +12,11 @@
 
 #include "ft_push_swap.h"
 
-long int	ft_atoi(char *str)
+long long int	ft_atoi(char *str)
 {
-	long int	res;
-	int			sig;
-	int			i;
+	long long	int	res;
+	int				sig;
+	int				i;
 
 	res = 0;
 	sig = 1;
@@ -62,7 +62,7 @@ int	ft_check_int(int argc, char **argv)
 	return (1);
 }
 
-int	ft_check_duplicate(int *arr, size_t len)
+int	ft_check_duplicate(long long int *arr, size_t len)
 {
 	size_t	i;
 	size_t	x;
@@ -82,7 +82,7 @@ int	ft_check_duplicate(int *arr, size_t len)
 	return (1);
 }
 
-int	ft_check_limits(long int num)
+int	ft_check_limits(long long int num)
 {
 	if (num < -2147483648 || num > 2147483647)
 		return (0);
@@ -91,11 +91,11 @@ int	ft_check_limits(long int num)
 
 int	ft_check_input(int argc, char **argv)
 {
-	int			i;
-	int			*nums;
-	long int	aux;
+	int				i;
+	long long int	*nums;
+	long long int	aux;
 
-	nums = malloc(sizeof(int) * (argc - 1));
+	nums = malloc(sizeof(long long int) * (argc - 1));
 	if (!nums)
 		return (ft_free_int(nums, 0));
 	if (!ft_check_int(argc, argv))

@@ -14,7 +14,7 @@
 
 void	ft_swap(t_list *stack)
 {
-	int	aux_n;
+	long long int	aux_n;
 
 	if (stack == NULL || stack->next == NULL)
 		return ;

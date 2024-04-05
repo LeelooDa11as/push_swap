@@ -38,13 +38,13 @@ int	ft_error_free(t_list **stack_a, t_list **stack_b)
 	return (1);
 }
 
-int	ft_free_int(int *ptr, int flag)
+int	ft_free_int(long long int *ptr, int flag)
 {
 	free(ptr);
 	return (flag);
 }
 
-int	ft_div(int num, int div)
+long long int	ft_div(long long int num, int div)
 {
 	return (num / div % 2);
 }

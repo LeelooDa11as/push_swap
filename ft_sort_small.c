@@ -30,9 +30,9 @@ int	ft_sort_three(t_list **stack_a)
 
 int	get_max_ind(t_list *stack)
 {
-	int	i;
-	int	max_i;
-	int	max;
+	int				i;
+	int				max_i;
+	long long int	max;
 
 	i = 0;
 	max_i = 0;
