@@ -6,7 +6,7 @@
 /*   By: kkoval <kkoval@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 15:43:18 by kkoval            #+#    #+#             */
-/*   Updated: 2024/04/05 13:38:25 by kkoval           ###   ########.fr       */
+/*   Updated: 2024/04/06 20:35:03 by kkoval           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,16 +85,6 @@ int	ft_radix(t_list **stack_a, t_list **stack_b)
 	return (1);
 }
 
-void	print_stack(t_list *stack)
-{
-	while (stack != NULL)
-	{
-		printf("\n     %lld\n     |", stack->num);
-		stack = stack->next;
-	}
-	printf("\n-----------\n");
-}
-
 int	main(int argc, char *argv[])
 {
 	t_list	*stack_a;
@@ -109,10 +99,8 @@ int	main(int argc, char *argv[])
 	if (!fill_stack(&stack_a, argc, argv))
 		ft_error_free(&stack_a, &stack_b);
 	pos_stack(stack_a);
-	ft_sort(&stack_a, &stack_b, argc - 1);
-	//if (is_sorted(stack_a))
-		//printf("Sorted, winner\n"); //para borrar
-		//return (ft_error());
+	if (!ft_sort(&stack_a, &stack_b, argc - 1))
+		return (ft_error_free(&stack_a, &stack_b));
 	ft_free(&stack_a);
 	ft_free(&stack_b);
 	return (1);

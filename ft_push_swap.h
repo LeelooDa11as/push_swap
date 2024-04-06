@@ -6,7 +6,7 @@
 /*   By: kkoval <kkoval@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 15:52:28 by kkoval            #+#    #+#             */
-/*   Updated: 2024/04/05 13:37:05 by kkoval           ###   ########.fr       */
+/*   Updated: 2024/04/06 20:32:14 by kkoval           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-void			print_stack(t_list *stack);
 void			ft_send_digb(t_list **stack_a, t_list **stack_b, int div);
 void			ft_send_diga(t_list **s_a, t_list **s_b, int div);
 void			pos_stack(t_list *stack);
