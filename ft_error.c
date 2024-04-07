@@ -1,41 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils.c                                         :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkoval <kkoval@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 13:39:03 by kkoval            #+#    #+#             */
-/*   Updated: 2024/04/06 20:33:26 by kkoval           ###   ########.fr       */
+/*   Created: 2024/04/05 13:40:17 by kkoval            #+#    #+#             */
+/*   Updated: 2024/04/05 13:40:23 by kkoval           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-long long int	ft_div(long long int num, int div)
+int	ft_error(void)
 {
-	return (num / div % 2);
+	write(2, "Error\n", 6);
+	return (0);
 }
 
-int	ft_stack_len(t_list *stack)
+void	ft_free(t_list **stack)
 {
-	int	len;
+	t_list	*tmp;
 
-	len = 0;
-	while (stack != NULL)
+	while (*stack)
 	{
-		stack = stack->next;
-		len++;
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
 	}
-	return (len);
+	stack = NULL;
 }
 
-int	ft_strlen(char *str)
+int	ft_error_free(t_list **stack_a, t_list **stack_b)
 {
-	int	len;
+	ft_free(stack_a);
+	ft_free(stack_b);
+	return (1);
+}
 
-	len = 0;
-	while (str[len] != '\0')
-		len++;
-	return (len);
+int	ft_free_int(long long int *ptr, int flag)
+{
+	free(ptr);
+	return (flag);
 }
