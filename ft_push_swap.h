@@ -57,4 +57,8 @@ int			ft_error_free(t_list **stack_a, t_list **stack_b);
 void		ft_free(t_list **stack);
 int			ft_free_int(long long int *ptr, int flag);
 int			ft_strlen(char *str);
+void 		ft_index_stack(t_list *stack);
+int 		ft_count_bigger(t_list *stack, int num);
+
+
 #endif

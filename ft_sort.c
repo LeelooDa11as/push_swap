@@ -42,7 +42,7 @@ void	ft_send_diga(t_list **stack_a, t_list **stack_b, int div)
 	}
 }
 
-void	pos_stack(t_list *stack)
+/*void	pos_stack(t_list *stack)
 {
 	long long int	min;
 	t_list			*first;
@@ -65,4 +65,47 @@ void	add_stack(t_list *stack, int n)
 		stack->num += n;
 		stack = stack->next;
 	}
+}*/
+
+int ft_count_bigger(t_list *stack, int num)
+{
+	int sum;
+
+	sum = 0;
+	while (stack != NULL)
+	{
+		if (num > stack->num)
+			sum++;
+		stack = stack->next;
+	}
+	return (sum);
+}
+
+void ft_index_stack(t_list *stack)
+{
+	t_list	*x;
+	int 	i;
+	int 	len;
+	int	 	*vals;
+	t_list 	*first;
+
+	first = stack;
+	x = first;
+	i = 0;
+	len = ft_stack_len(stack);
+	vals = malloc(sizeof(int) * len);
+	while (x != NULL)
+	{		
+		vals[i] = ft_count_bigger(first, x->num);
+		i++;
+		x = x->next;
+	}
+	i=0;
+	while (i<len)
+	{
+		first->num = vals[i];
+		++i;
+		first = first->next;
+	}
+	free(vals);
 }

@@ -108,12 +108,8 @@ int	main(int argc, char *argv[])
 		return (ft_error());
 	if (!fill_stack(&stack_a, argc, argv))
 		ft_error_free(&stack_a, &stack_b);
-	pos_stack(stack_a);
-
+	ft_index_stack(stack_a);
 	ft_sort(&stack_a, &stack_b, argc - 1);
-	//if (is_sorted(stack_a))
-		//printf("Sorted, winner\n"); //para borrar
-		//return (ft_error());
 	ft_free(&stack_a);
 	ft_free(&stack_b);
 	return (1);
