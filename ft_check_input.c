@@ -97,7 +97,7 @@ int	ft_check_input(int argc, char **argv)
 
 	nums = malloc(sizeof(long long int) * (argc - 1));
 	if (!nums)
-		return (ft_free_int(nums, 0));
+		return (0);
 	if (!ft_check_int(argc, argv))
 		return (ft_free_int(nums, 0));
 	i = 0;
