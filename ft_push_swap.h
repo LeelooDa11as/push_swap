@@ -6,7 +6,7 @@
 /*   By: kkoval <kkoval@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 15:52:28 by kkoval            #+#    #+#             */
-/*   Updated: 2024/04/09 15:38:42 by kkoval           ###   ########.fr       */
+/*   Updated: 2024/04/09 15:57:04 by kkoval           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ typedef struct s_list
 
 void			ft_send_digb(t_list **stack_a, t_list **stack_b, int div);
 void			ft_send_diga(t_list **s_a, t_list **s_b, int div);
-//void			pos_stack(t_list *stack);
-//void			add_stack(t_list *stack, int n);
 int				get_min_ind(t_list *stack);
 int				get_max_ind(t_list *stack);
 int				ft_sort_three(t_list **stack_a);
