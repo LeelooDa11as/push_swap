@@ -6,7 +6,7 @@
 /*   By: kkoval <kkoval@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 18:07:53 by kkoval            #+#    #+#             */
-/*   Updated: 2024/04/04 18:12:09 by kkoval           ###   ########.fr       */
+/*   Updated: 2024/04/09 15:52:51 by kkoval           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,34 +42,9 @@ void	ft_send_diga(t_list **stack_a, t_list **stack_b, int div)
 	}
 }
 
-/*void	pos_stack(t_list *stack)
+int	ft_count_bigger(t_list *stack, int num)
 {
-	long long int	min;
-	t_list			*first;
-
-	min = 0;
-	first = stack;
-	while (stack != NULL)
-	{
-		if (stack->num < min)
-			min = stack->num;
-		stack = stack->next;
-	}
-	add_stack(first, -min);
-}
-
-void	add_stack(t_list *stack, int n)
-{
-	while (stack != NULL)
-	{
-		stack->num += n;
-		stack = stack->next;
-	}
-}*/
-
-int ft_count_bigger(t_list *stack, int num)
-{
-	int sum;
+	int	sum;
 
 	sum = 0;
 	while (stack != NULL)
@@ -81,13 +56,13 @@ int ft_count_bigger(t_list *stack, int num)
 	return (sum);
 }
 
-void ft_index_stack(t_list *stack)
+void	ft_index_stack(t_list *stack)
 {
 	t_list	*x;
-	int 	i;
-	int 	len;
-	int	 	*vals;
-	t_list 	*first;
+	int		i;
+	int		len;
+	int		*vals;
+	t_list	*first;
 
 	first = stack;
 	x = first;
@@ -95,13 +70,13 @@ void ft_index_stack(t_list *stack)
 	len = ft_stack_len(stack);
 	vals = malloc(sizeof(int) * len);
 	while (x != NULL)
-	{		
+	{
 		vals[i] = ft_count_bigger(first, x->num);
 		i++;
 		x = x->next;
 	}
-	i=0;
-	while (i<len)
+	i = 0;
+	while (i < len)
 	{
 		first->num = vals[i];
 		++i;

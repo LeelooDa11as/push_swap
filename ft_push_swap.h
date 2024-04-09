@@ -6,7 +6,7 @@
 /*   By: kkoval <kkoval@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 15:52:28 by kkoval            #+#    #+#             */
-/*   Updated: 2024/04/06 20:32:14 by kkoval           ###   ########.fr       */
+/*   Updated: 2024/04/09 15:38:42 by kkoval           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ typedef struct s_list
 
 void			ft_send_digb(t_list **stack_a, t_list **stack_b, int div);
 void			ft_send_diga(t_list **s_a, t_list **s_b, int div);
-void			pos_stack(t_list *stack);
-void			add_stack(t_list *stack, int n);
+//void			pos_stack(t_list *stack);
+//void			add_stack(t_list *stack, int n);
 int				get_min_ind(t_list *stack);
 int				get_max_ind(t_list *stack);
 int				ft_sort_three(t_list **stack_a);
@@ -52,11 +52,11 @@ void			ft_do_rev_rotate(t_list **stack, char mode);
 int				ft_error(void);
 int				ft_stack_len(t_list *stack);
 long long int	ft_div(long long int num, int div);
-int			ft_error_free(t_list **stack_a, t_list **stack_b);
-void		ft_free(t_list **stack);
-int			ft_free_int(long long int *ptr, int flag);
-int			ft_strlen(char *str);
-void 		ft_index_stack(t_list *stack);
-int 		ft_count_bigger(t_list *stack, int num);
+int				ft_error_free(t_list **stack_a, t_list **stack_b);
+void			ft_free(t_list **stack);
+int				ft_free_int(long long int *ptr, int flag);
+int				ft_strlen(char *str);
+void			ft_index_stack(t_list *stack);
+int				ft_count_bigger(t_list *stack, int num);
 
 #endif
