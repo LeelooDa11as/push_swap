@@ -31,7 +31,7 @@ void	ft_free(t_list **stack)
 		free(*stack);
 		*stack = tmp;
 	}
-	stack = NULL; (should it be *stack?)
+	*stack = NULL;
 }
 
 // it frees both stacks and terminates the program in case error occuring
